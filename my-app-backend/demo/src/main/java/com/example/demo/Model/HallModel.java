@@ -1,14 +1,11 @@
 package com.example.demo.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.List;
 
 @Entity
 @Getter
@@ -16,9 +13,11 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class HallModel {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int hallId;
+    private Long hallId;
+
     private String hallname;
     private int price;
     private int capacity;
@@ -26,6 +25,7 @@ public class HallModel {
     private String address;
     private String description;
     private int rating;
+    private String image;
 
 
 }

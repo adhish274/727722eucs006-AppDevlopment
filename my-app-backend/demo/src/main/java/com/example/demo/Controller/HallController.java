@@ -1,47 +1,60 @@
 package com.example.demo.Controller;
 
-import java.util.List;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RestController;
-
-import com.example.demo.Service.HallService;
 import com.example.demo.model.HallModel;
+import com.example.demo.Service.HallService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-
+import java.util.List;
 
 @RestController
 @RequestMapping("/halls")
+@CrossOrigin(origins = "http://localhost:3000")
 public class HallController {
 
     @Autowired
-    public HallService service;
+    private HallService hallService;
 
-    //GET
     @GetMapping("/gethalls")
-    public List<HallModel> getHalls() {
-        return service.getHalls();
+    public List<HallModel> getAllHalls() {
+        return hallService.getAllHalls();
     }
-    
-    @GetMapping("/halls/{city}")
-    public List<HallModel> getHallsByCity(@PathVariable String city) {
-        return service.getHallsbyCity(city);
-    }
-    
-    //POST
-    @PostMapping("/addhalls")
-    public String postMethodName(@RequestBody HallModel model) {
-        service.addHall(model);
-        return "added";
-    }
-    
-    
 
+    @GetMapping("gethalls/{id}")
+    public ResponseEntity<HallModel> getHallById(@PathVariable Long id) {
+        return hallService.getHallById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/search")
+    public List<HallModel> searchHallsByname(@RequestParam("hallname") String hallname){
+        return hallService.findHallsByNameContaining(hallname);
+    }
+
+    @PostMapping("/addhall")
+    public ResponseEntity<HallModel> createHall(@RequestBody HallModel hallModel) {
+        HallModel createdHall = hallService.createHall(hallModel);
+        return ResponseEntity.ok(createdHall);
+    }
+
+    @PutMapping("/updatehall/{hallId}")
+    public ResponseEntity<HallModel> updateHall(@PathVariable Long hallId, @RequestBody HallModel hall) {
+        HallModel updatedHall = hallService.updateHall(hallId, hall);
+        return ResponseEntity.ok(updatedHall);
+    }
+   
+    // @CrossOrigin(origins = "http://localhost:3000")
+    @GetMapping("/location/{city}")
+    public List<HallModel> getHallsByLocation(@PathVariable String city) {
+        return hallService.getHallsByLocation(city);
+    }
+
+    @GetMapping("/count")
+    public Long getHallCount() {
+    return hallService.getHallCount();
+
+    
+}
 }

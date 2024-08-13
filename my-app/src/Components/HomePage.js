@@ -56,7 +56,12 @@ function HomePage(){
     { value: "bangalore", label: "Bangalore"},
     { value: "chennai", label: "Chennai" },
     { value: "delhi", label: "Delhi" },
-    { value: "mumbai", label: "Mumbai" }
+    { value: "mumbai", label: "Mumbai" },
+    { value: "jaipur", label: "Jaipur" },
+    { value: "kolkata", label: "Kolkata" },
+    { value: "lucknow", label: "Lucknow" },
+    { value: "hyderabad", label: "Hyderabad" },
+    { value: "pune", label: "Pune" }
   ];
   
   
@@ -98,6 +103,26 @@ function HomePage(){
           console.log(selectedValue);
           navigate("/mumbai")
       }
+      else if (selectedValue === "jaipur") {
+          console.log(selectedValue);
+          navigate("/jaipur")
+      }
+      else if (selectedValue === "kolkata") {
+          console.log(selectedValue);
+          navigate("/kolkata")
+      }
+      else if (selectedValue === "lucknow") {
+          console.log(selectedValue);
+          navigate("/lucknow")
+      }
+      else if (selectedValue === "hyderabad") {
+          console.log(selectedValue);
+          navigate("/hyderabad")
+      }
+      else if (selectedValue === "pune") {
+          console.log(selectedValue);
+          navigate("/pune")
+      }
   }   
 
   
@@ -107,7 +132,7 @@ function HomePage(){
           
             <div className='home-header'>
               <div className='header-title'>
-                <img src={hallspace} className='web-logo'></img>
+                <img src={hallspace} className='web-logo' onClick={() => navigate('/')}></img>
                 <p className='header-title-text'>HallSpace</p>
 
               </div>
@@ -115,7 +140,7 @@ function HomePage(){
                 <nav className='nav'>
                     <ul className='nav-links'>
                         <li><a className='links'onClick={() => navigate('/')}>Home</a></li>
-                        <li><a href="#description" className='links'>About Us</a></li>
+                        <li><a href="#description" className='links' >About Us</a></li>
                         <li><a href="#contact-us"className='links' onClick={()=> navigate('/Contact')}>Contact Us</a></li>
                         
                         

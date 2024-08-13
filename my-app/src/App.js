@@ -13,21 +13,31 @@ import Contact from './Components/Contact';
 import ComplexGrid from './Components/cities';
 import Faq from './Components/Faq';
 import About from './Components/About';
-import Ahmedabad from './Components/Cities/Ahmedabad';
 import Bangalore from './Components/Cities/Banglore';
 import Chennai from './Components/Cities/Chennai';
 import Delhi from './Components/Cities/Delhi';
 import Mumbai from './Components/Cities/Mumbai';
 import Payments from './Components/Payments';
-import AdminHome from './Components/Adminhome';
-import AdminDash from './Components/AdminDash';
-import ManageHall from './Components/ManageHalls';
-import Dashboard from './Components/Dashboard';
+import AdminHome from './Components/Admin/Adminhome';
+import AdminDash from './Components/Admin/AdminDash';
+import ManageHall from './Components/Admin/ManageHalls';
+import Dashboard from './Components/Admin/Dashboard';
 import Header from './Components/Header';
 import AboutUs from './Components/About/AboutUs';
 import BookingForm from './Components/BookingForm';
 import Foot from './Components/Footer/Foot';
 import Simplefoot from './Components/simplefoot/Simplefoot';
+import Hyderabad from './Components/Cities/Hyderabad';
+import Jaipur from './Components/Cities/Jaipur';
+import Kolkata from './Components/Cities/Kolkata';
+import Pune from './Components/Cities/Pune';
+import Lucknow from './Components/Cities/Lucknow';
+import Ahmedabad from './Components/Cities/Ahmedabad';
+import Admincontact from './Components/Admin/admincontact';
+import Head from './Components/Admin/Head';
+import Afaq from './Components/Admin/Afaq';
+import UserList from './Components/UserList';
+import Adminlogin from './Components/Admin/Adminlogin';
 
 
 const App = () => {
@@ -49,10 +59,15 @@ const App = () => {
        <Route path='/payments' element={<Payments/>}></Route>
        <Route path='/faq' element={<Faq/>}></Route>
        <Route path='/ahmedabad' element={<Ahmedabad/>}></Route>
+       <Route path='/mumbai' element={<Mumbai/>}></Route>
        <Route path='/bangalore' element={<Bangalore/>}></Route>
        <Route path='/chennai' element={<Chennai/>}></Route>
        <Route path='/delhi' element={<Delhi/>}></Route>
-       <Route path='/mumbai' element={<Mumbai/>}></Route>
+       <Route path='/hyderabad' element={<Hyderabad/>}></Route>
+       <Route path='/jaipur' element={<Jaipur/>}></Route>
+       <Route path='/kolkata' element={<Kolkata/>}></Route>
+       <Route path='/pune' element={<Pune/>}></Route>
+       <Route path='/lucknow' element={<Lucknow/>}></Route>
        <Route path='/admin' element={<AdminHome/>}></Route>
        <Route path='/admindash' element={<AdminDash/>}></Route>
        <Route path='/managehall' element={<ManageHall/>}></Route>
@@ -62,6 +77,11 @@ const App = () => {
        <Route path='/bookingform' element={<BookingForm/>}></Route>
        <Route path='/footer' element={<Foot/>}></Route>
        <Route path='/simplefooter' element={<Simplefoot/>}></Route>
+       <Route path='/afaq' element={<Afaq/>}></Route>
+       <Route path='/admincontact' element={<Admincontact/>}></Route>
+       <Route path='/head' element={<Head/>}></Route>
+       <Route path='/userlist' element={<UserList/>}></Route>
+       <Route path='/adminlogin' element={<Adminlogin/>}></Route>
 
        
      </Routes>

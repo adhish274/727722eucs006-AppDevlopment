@@ -6,8 +6,8 @@
     padding: 20px 10px 10px 20px; /* Reduce bottom padding */
     text-align: center;
     font-family: "Quicksand", "Helvetica Neue", Arial, sans-serif;
-    height:230px ;
-    margin-top: 70px;
+    height:160px ;
+    margin-top: 60px;
 }
 
 .simplefooter-content {
@@ -31,8 +31,13 @@
     font-size: 24px;
 }
 
+.simplefooter-icon-title {
+    color: white;
+    margin-right: 5px; /* Adjust spacing between icon and title */
+    font-size: 24px;
+} 
 .simplefooter-title {
-    font-weight: 300; /* Light font weight */
+    font-weight: 900; /* Light font weight */
     color: white;
     margin-top: 5px;
 }
@@ -61,7 +66,7 @@
 }
 
 .simplefooter-icons {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .simplefooter-icon {

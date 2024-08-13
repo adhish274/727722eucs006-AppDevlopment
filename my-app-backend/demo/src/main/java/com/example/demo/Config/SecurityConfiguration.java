@@ -20,6 +20,7 @@ import lombok.RequiredArgsConstructor;
 @EnableMethodSecurity
 @RequiredArgsConstructor
 public class SecurityConfiguration {
+
     private final AuthFilterService authFilterService;
     private final AuthenticationProvider authenticationProvider;
 
@@ -28,12 +29,11 @@ public class SecurityConfiguration {
         http
                 .csrf(AbstractHttpConfigurer::disable)
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/api/users/**", "/forgotPassword/**")
-                        .permitAll()
-                        .requestMatchers("/api/admin/**")  // Example for admin access
-                        .hasRole("ADMIN")  // Admin role requirement
-                        .requestMatchers("/halls/**") // Allow access to all endpoints under /halls
-                        .permitAll()
+                        .requestMatchers("/api/users/**", "/forgotPassword/**", "/halls/**" , "/bookings/**" , "/api/payments/**")
+                        .permitAll() 
+                        .requestMatchers("/api/admin/**")
+                        .hasRole("ADMIN")
+                        
                         .anyRequest()
                         .authenticated())
                 .sessionManagement(session -> session

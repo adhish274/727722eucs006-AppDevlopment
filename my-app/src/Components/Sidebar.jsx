@@ -8,6 +8,7 @@ import { IoMdContact } from "react-icons/io";
 import { MdDashboard } from "react-icons/md";
 import { NavLink } from 'react-router-dom';
 import { IoLogOut } from "react-icons/io5";
+import { AddBusiness, ContactPhone, Quiz, SupervisedUserCircle } from '@mui/icons-material';
 
 
 
@@ -16,41 +17,41 @@ const Sidebar =({children})=>{
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
         {
-            path:'/',
-            name:"dashboard",
+            path:'/dashboard',
+            name:"Dashboard",
             icon:<MdDashboard />
 
         },
 
         {
-            path:'/About',
-            name:"About",
-            icon:<IoMdHome/>
+            path:'/managehall',
+            name:"Manage Hall",
+            icon:<AddBusiness/>
         },
         {
-            path:'/Login',
-            name:"Login",
-            icon:<IoLogOut/>
+            path:'/userlist',
+            name:"Users",
+            icon:<SupervisedUserCircle/>
         },
         {
-            path:'/Register',
-            name:"Register",
-            icon:<FaSignInAlt />
+            path:'/Afaq',
+            name:"Faq",
+            icon:<Quiz />
 
         },
         {
-            path:'/Contact',
+            path:'/admincontact',
             name:"Contact",
-            icon:<IoMdContact />
+            icon:<ContactPhone />
 
         }
     ]
     return(
         
         <div className="container">
-        <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
+        <div style={{width: isOpen ? "300px" : "50px"}} className="sidebar">
             <div className="top_section">
-                <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Side Panel</h1>
+                <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Admin Panel</h1>
                 <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
                     <FaBars onClick={toggle}/>
                 </div>

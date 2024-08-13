@@ -11,7 +11,7 @@ import hallspace from 'C:/Users/flyto/Advanced_App_Development/Advanced_App_Deve
     return(
         <div className='home-header'>
               <div className='header-title'>
-                <img src={hallspace} className='web-logo'></img>
+                <img src={hallspace} className='web-logo' onClick={() => navigate('/')}></img>
                 <p className='header-title-text'>HallSpace</p>
 
               </div>
@@ -20,7 +20,7 @@ import hallspace from 'C:/Users/flyto/Advanced_App_Development/Advanced_App_Deve
                     <ul className='nav-links'>
                         <li><a className='links'onClick={() => navigate('/')}>Home</a></li>
                         <li><a className='links'>About Us</a></li>
-                        <li><a className='links'>Contact Us</a></li>
+                        <li><a className='links' onClick={() => navigate('/contact')}>Contact Us</a></li>
                         
                     </ul>
                 </nav>

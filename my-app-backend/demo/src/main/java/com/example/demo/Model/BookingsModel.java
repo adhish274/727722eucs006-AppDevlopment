@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 import jakarta.annotation.Generated;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,14 +25,14 @@ public class BookingsModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int BookingId;
+    private int bookingId;
 
-    @ManyToOne
-    @JoinColumn(name = "user_id") // Foreign key column in the bookings table
-    private User user; // Reference to the User who made the booking
-
-    private int Hall_id;
-    private int StartTime;
-    private int EndTime;
-    private int Price;
+    
+    private Long userId;
+    private Long hallId;
+    private String firstName;
+    private String lastName;
+    private LocalDate startDate;
+    private LocalTime startTime;
+    
 }

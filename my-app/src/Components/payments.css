@@ -9,7 +9,7 @@
 
 .outer-div-payments{
     display: flex;
-    background-color: rgba(113, 113, 113, 0.123);
+    background-color: #4b80e01f;
     width: 500px;
     height: 600px;
     border-radius: 0%;
@@ -25,7 +25,7 @@
 .text-control-payments{
     text-align: left;
     margin: 10px;
-    color: black;
+    color: rgb(177, 212, 235);
 }
 .p-names{
     display: flex;

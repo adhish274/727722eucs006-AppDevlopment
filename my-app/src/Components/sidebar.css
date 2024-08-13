@@ -11,10 +11,10 @@ main{
     padding: 20px;
 }
 .sidebar{
-    background: #24252a;
+    background: linear-gradient(180deg, #020024 0%, #090979 0%, #00d4ff 100%);
     color: #fff;
     height: 100vh;
-    width: 200px;
+    width: 300px;
     transition: all 0.3s;
 }
 .top_section{
@@ -38,12 +38,12 @@ main{
     transition: all 0.5s;
 }
 .link:hover{
-    background:rgb(154, 195, 220);
+    background:rgb(255, 255, 255);
     color: #000;
     transition: all 0.5s;
 }
 .active{
-    background: rgb(144, 184, 209);
+    background: rgb(187, 214, 255);
     color: #000;
 }
 .icon, .link_text{

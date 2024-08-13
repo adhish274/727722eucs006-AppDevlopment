@@ -1,7 +1,7 @@
 .admin-div{
     background-color: rgba(113, 113, 113, 0.123);
     border-radius: 5%;
-    height: 400px;
+    height: 300px;
     width: 300px;
     margin-right: 10%;
     border-style: ridge;
@@ -11,7 +11,7 @@
 }
 .user-div{
     background-color: rgba(113, 113, 113, 0.123);
-    height: 400px;
+    height: 300px;
     width: 300px;
     margin-right: 10%;
     border-radius: 5%;
